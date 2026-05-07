@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: github-actions-nginx
+  namespace: argocd
+spec:
+  project: github-actions-argocd-test
+
+  source:
+    repoURL: https://github.com/ghkim-devstack/github-actions-argocd-test.git
+    targetRevision: main
+    path: deploy/nginx
+
+  destination:
+    name: member
+    namespace: gitops-nginx-dev
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

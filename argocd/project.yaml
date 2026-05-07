@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: github-actions-argocd-test
+  namespace: argocd
+spec:
+  description: GitHub Actions + Argo CD GitOps test
+
+  sourceRepos:
+    - https://github.com/ghkim-devstack/github-actions-argocd-test.git
+
+  destinations:
+    - namespace: gitops-nginx-dev
+      server: '*'
+
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
+
+  namespaceResourceWhitelist:
+    - group: '*'
+      kind: '*'
