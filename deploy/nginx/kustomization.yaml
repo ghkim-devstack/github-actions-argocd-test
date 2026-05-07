@@ -4,9 +4,10 @@ kind: Kustomization
 namespace: gitops-nginx-dev
 
 resources:
-  - deployment.yaml
-  - service.yaml
+- deployment.yaml
+- service.yaml
 
 images:
-  - name: ghcr.io/ghkim-devstack/github-actions-argocd-test
-    newTag: latest
+- name: ghcr.io/ghkim-devstack/github-actions-argocd-test
+  newName: ghcr.io/ghkim-devstack/github-actions-argocd-test
+  newTag: "23727e4"
