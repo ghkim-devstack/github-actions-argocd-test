@@ -10,4 +10,4 @@ resources:
 images:
 - name: ghcr.io/ghkim-devstack/github-actions-argocd-test
   newName: ghcr.io/ghkim-devstack/github-actions-argocd-test
-  newTag: "23727e4"
+  newTag: ec523dd
